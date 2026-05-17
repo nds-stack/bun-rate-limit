@@ -1,5 +1,5 @@
 {
-  "name": "@nds-stack/bun-rate-limit", "version": "0.1.0-alpha.0",
+  "name": "@nds-stack/bun-rate-limit", "version": "0.1.0-beta.0",
   "description": "Token bucket rate limiter for Bun — in-memory, zero dependencies",
   "author": "nds-stack <nds.stack@gmail.com>", "type": "module",
   "main": "dist/index.js", "types": "dist/index.d.ts",
@@ -7,6 +7,7 @@
   "scripts": {
     "test": "bun test", "lint": "eslint .", "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
+    "clean": "bun run --bun \"rm -rf dist\"",
     "bench": "bun run bench/rate-limit.bench.ts",
     "prepublishOnly": "bun run lint && bun run typecheck && bun test && bun run build",
     "build": "bun build ./src/index.ts --outdir=./dist --target=bun --format=esm && tsc -p tsconfig.build.json"
